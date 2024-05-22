@@ -2,7 +2,7 @@
 $servername = "servidor-sis-riego-chido.mysql.database.azure.com"; // Cambia esto
 $username = "chalinosanchez"; // Cambia esto
 $password = "Ch4l1n0S4nch3z"; // Cambia esto
-$dbname = "prueba"; // Cambia esto
+$dbname = "sistemariego"; // Cambia esto
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
