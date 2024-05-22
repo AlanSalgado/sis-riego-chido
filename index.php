@@ -9,7 +9,7 @@
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
         // Establecer el modo de error de PDO para lanzar excepciones
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected to $dbname at $host successfully.<br>";
+        // echo "Connected to $dbname at $host successfully.<br>";
 
         // Preparar y ejecutar la consulta
         $sql = 'SELECT * FROM prueba';
@@ -23,7 +23,7 @@
         if (count($results) > 0) {
             // Iterar sobre los resultados y mostrarlos
             foreach ($results as $row) {
-                echo 'humedad: ' . $row['humedad'] . ' - regado: ' . $row['regado'] . '<br>';
+                echo 'Fecha: ' . $row['fechaActual'] . ', Humedad: ' . $row['porcHumedad'] . ', Descripción: ' . $row['descripcion'] . '<br>';
             }
         } else {
             echo 'No se encontraron resultados.';
