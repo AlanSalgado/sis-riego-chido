@@ -1,19 +1,15 @@
 <?php
     $host = 'servidor-sis-riego-chido.mysql.database.azure.com';
     $username = 'chalinosanchez';
-    $password = '"Ch4l1n0S4nch3z';
-    $db_name = 'sistemariego';
-    
-
-    //Initializes MySQLi
-    $conn = mysqli_init();
-
-    // Establish the connection
-    mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, NULL, MYSQLI_CLIENT_SSL);
-
-    //If connection failed, show the error
-    if (mysqli_connect_errno())
-    {
-        die('Failed to connect to MySQL: '.mysqli_connect_error());
+    $password = 'Ch4l1n0S4nch3z';
+    $dbname = 'sistemariego'; 
+ 
+    try {
+        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        echo "Connected to $dbname at $host successfully.";
+        $sql = "SELECT * FROM prueba"; // Cambia esto
+        echo "CONEXION EXITOSA";
+    } catch (PDOException $pe) {
+        die("Could not connect to the database $dbname :" . $pe->getMessage());
     }
 ?>
